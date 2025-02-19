@@ -19,7 +19,7 @@ import Image from "next/image";
 import Link from "next/link";
 import companyLogo from "@/assets/aims-logo.png";
 
-import { Shift } from "ambient-cbg";
+
 
 const Homepage = () => {
   const [open, setOpen] = useState(false);
@@ -61,16 +61,17 @@ const Homepage = () => {
   };
 
   return (
-    <Container
+    <Box
       sx={{
         paddingY: 4,
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+        backgroundImage: "linear-gradient(to right, #ffd89b, #19547b)";
       }}
     >
-      <Shift />
+      
       {/* Login Button - Top Right */}
       <IconButton
         sx={{
@@ -102,7 +103,7 @@ const Homepage = () => {
       </Box>
 
       {/* Table with Logos */}
-      <TableContainer
+      <Table
         component={Paper}
         sx={{
           boxShadow: 3,
@@ -209,7 +210,7 @@ const Homepage = () => {
             )}
           </TableBody>
         </Table>
-      </TableContainer>
+      </Table>
 
       {/* Modal for Iframe */}
       <ModalComponent
@@ -217,7 +218,7 @@ const Homepage = () => {
         handleClose={handleClose}
         iframeSrc={iframeSrc}
       />
-    </Container>
+    </Box>
   );
 };
 
